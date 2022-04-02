@@ -1,18 +1,19 @@
-
+import {Container, ListGroup, Card} from 'react-bootstrap'
 
 export default function Packages(props) {
-    const displayPackages = props.packages.map((eachPackage) => <li>{eachPackage}</li>)
+    const displayPackages = props.packages.map((eachPackage) => <ListGroup.Item>{eachPackage}</ListGroup.Item>)
 
     return (
-        <div>
-            <div className="packages">
-                <div className="packagesHeader">
-                    <h1>Our Packages</h1>
-                </div>
-                <ul>
-                    {displayPackages}
-                </ul>
-            </div>
-        </div>
+        <Container>
+            <Card>
+                <Card.Body>
+                    <Card.Title>Our Packages</Card.Title>
+                    <Card.Text>Check out some of our packages! Every package si ethically sourced and organic.</Card.Text>
+                </Card.Body>
+            </Card>
+            <ListGroup>
+                {displayPackages}
+            </ListGroup>
+        </Container>
     )
 }
